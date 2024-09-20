@@ -1,0 +1,11 @@
+FROM ubuntu
+
+# Install NGINX and git
+RUN apt-get update -y && \
+    apt-get install -y nginx git && \
+    rm -rf /usr/share/nginx/html/* && \
+    git clone https://github.com/theycallmezainn/devops.git /usr/share/nginx/html
+
+# Start NGINX
+CMD ["nginx", "-g", "daemon off;"]
+

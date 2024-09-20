@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  iac-website:
+    build:
+      context: .
+      dockerfile: iac-docker-file
+      no_cache: true
+    container_name: iac-website
+    ports:
+      - "8090:80"
+      - "8091:80"
+    volumes:
+      - /var/www/html:/usr/share/nginx/html
+    hostname: iac-website
