@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: iac-docker-file
-      no_cache: true
     container_name: iac-website
     ports:
       - "8090:80"
